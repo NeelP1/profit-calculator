@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import sys
 import argparse
 
@@ -13,7 +11,11 @@ rate = float(sys.argv[2])
 end = int(sys.argv[3])
 increment = int(sys.argv[4])
 
-for capital in range(0, end, increment):
-    balance = capital * rate
-    profit = balance - capital
-    print "Profit = %s (Capital = %s)" % (profit, capital)
+originalCapital = capital
+
+print "Original Capital: $%s" % capital
+
+for x in range(0, end, increment):
+    capital = capital * rate
+    profit = capital - originalCapital
+    print "Profit = %s (capital = %s)" % (profit, capital)
